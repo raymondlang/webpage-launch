@@ -11,40 +11,71 @@ No templates. No build tools. No frameworks. Just one `index.html` with inline C
 3. **Asks the right questions** — CTA, tone, constraints
 4. **Generates `index.html`** — a complete, self-contained landing page
 
-## Install
+## Installation
 
-### As a Claude Code skill
+### For Claude Code users
 
-Add this repo as a skill in your Claude Code configuration:
+Copy the skill files to your Claude Code skills directory:
 
 ```bash
-claude skill add webpage-launch https://github.com/raymondlang/webpage-launch
+# Create the skill directory
+mkdir -p ~/.claude/skills/webpage-launch
+
+# Copy all files (or clone this repo directly)
+cp SKILL.md styles.md style-sampler-template.md html-template.md viewport-baseline.css ~/.claude/skills/webpage-launch/
 ```
 
-### As a Superpowers skill
-
-Install via the Superpowers skill registry:
+Or clone directly:
 
 ```bash
-# Add to your superpowers skills directory
 git clone https://github.com/raymondlang/webpage-launch.git ~/.claude/skills/webpage-launch
 ```
 
-### Manual
+Then use it by typing `/webpage-launch` in Claude Code.
 
-Clone the repo and reference the `SKILL.md` file directly.
+### As a Superpowers skill
 
-## Usage
+```bash
+git clone https://github.com/raymondlang/webpage-launch.git ~/.claude/skills/webpage-launch
+```
 
-Navigate to any project folder and invoke the skill:
+## How to use
+
+### Generate a landing page for any project
 
 ```
 /webpage-launch
 ```
 
-Or ask Claude Code directly:
-
 > "Generate a landing page for this project"
+
+The skill will:
+
+1. Read your project folder — README, package.json, source files, docs, assets
+2. Summarize what it found and present its understanding of your product
+3. Generate 3–4 visual style previews using your product's real headline and fonts
+4. Open the style sampler in your browser so you can compare directions side by side
+5. Ask about CTA, tone, and any constraints
+6. Generate a complete `index.html` in your chosen style
+7. Open it in your browser
+
+### Start from an idea
+
+```
+/webpage-launch
+```
+
+> "I'm building a CLI tool for database migrations — make me a launch page"
+
+The skill will work from your description, ask the right questions, and generate a page even without a full project folder.
+
+### Revise
+
+After generation, ask for targeted changes:
+
+> "Make the hero darker and change the CTA to 'Start free trial'"
+
+The skill makes surgical edits instead of regenerating the whole page.
 
 ## What you get
 
@@ -82,7 +113,19 @@ The skill includes 12 distinct visual directions:
 11. **Technical Frontier** — advanced, rigorous, futuristic
 12. **Conversion-Maximalist** — urgent, practical, persuasive
 
-The skill picks 3-4 that fit your product and shows them visually before you commit.
+The skill picks 3–4 that fit your product and shows them visually before you commit.
+
+## Philosophy
+
+This skill was born from the belief that:
+
+**You don't need a designer to ship a good landing page.** You just need to see real options and react to what you like.
+
+**Dependencies are debt.** A single HTML file will work in 10 years. A React landing page from 2019? Good luck.
+
+**Generic is forgettable.** Every landing page should feel like it was made for this product, not pulled from a template gallery.
+
+**Show, don't ask.** Asking "do you want bold or minimal?" is useless. Showing two real previews side by side is a decision people can actually make.
 
 ## License
 
