@@ -1,0 +1,5 @@
+.DS_Store
+_style-preview.html
+index.html
+*.html
+!style-sampler-template.md

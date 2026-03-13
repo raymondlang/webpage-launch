@@ -1,0 +1,191 @@
+/* ===== Universal viewport baseline for one-page launches ===== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+:root {
+  --section-x: clamp(1rem, 4vw, 2rem);
+  --section-y: clamp(2.5rem, 8vh, 6rem);
+
+  --display-size: clamp(2rem, 6vw, 5rem);
+  --h2-size: clamp(1.25rem, 3vw, 2.25rem);
+  --body-size: clamp(0.95rem, 1.2vw, 1.125rem);
+  --small-size: clamp(0.82rem, 0.95vw, 0.95rem);
+
+  --gap: clamp(1rem, 2vw, 1.5rem);
+  --card-pad: clamp(1rem, 2vw, 1.25rem);
+
+  --page-max: 1200px;
+  --content-max: 760px;
+}
+
+section {
+  padding: var(--section-y) var(--section-x);
+}
+
+.container,
+.section-inner {
+  width: min(100%, var(--page-max));
+  margin-inline: auto;
+}
+
+.content-col {
+  width: min(100%, var(--content-max));
+}
+
+h1,
+.display {
+  font-size: var(--display-size);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+  max-width: 12ch;
+  margin: 0 0 var(--gap);
+}
+
+h2 {
+  font-size: var(--h2-size);
+  line-height: 1.05;
+  text-wrap: balance;
+  margin: 0 0 var(--gap);
+}
+
+p,
+li {
+  font-size: var(--body-size);
+  line-height: 1.55;
+  max-width: 68ch;
+}
+
+small,
+.meta,
+.eyebrow {
+  font-size: var(--small-size);
+  line-height: 1.4;
+}
+
+img,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.grid,
+.cards {
+  display: grid;
+  gap: var(--gap);
+}
+
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.card,
+.panel,
+.stat-tile,
+.quote-box {
+  padding: var(--card-pad);
+  min-width: 0;
+}
+
+.row,
+.cta-row,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  align-items: center;
+}
+
+button,
+.button,
+a.button,
+input,
+select,
+textarea {
+  font: inherit;
+  max-width: 100%;
+}
+
+pre,
+code {
+  max-width: 100%;
+}
+
+pre {
+  overflow-x: auto;
+}
+
+@media (max-width: 900px) {
+  .grid-4,
+  .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --section-y: clamp(2rem, 6vh, 3rem);
+    --display-size: clamp(1.75rem, 8vw, 3rem);
+    --h2-size: clamp(1.15rem, 5vw, 1.75rem);
+  }
+
+  .grid-4,
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .row,
+  .cta-row,
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  h1,
+  .display,
+  h2 {
+    max-width: none;
+  }
+}
+
+@media (max-height: 700px) {
+  :root {
+    --section-y: clamp(1.75rem, 5vh, 3rem);
+    --display-size: clamp(1.75rem, 5vw, 4rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
