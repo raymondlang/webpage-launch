@@ -45,7 +45,7 @@ Curated visual styles for launch pages and product stories. Each preset is desig
 **Layout:** Dense but controlled product-marketing layout. Hero with interface screenshot, followed by modular feature rows and conversion blocks.
 
 **Typography:**
-- Display: `Geist` (700)
+- Display: `Geist` (700) — fallback: `Cabinet Grotesk` (Fontshare) or `Inter` (Google Fonts)
 - Body: `IBM Plex Sans` (400/500)
 
 **Colors:**
@@ -79,8 +79,8 @@ Curated visual styles for launch pages and product stories. Each preset is desig
 **Layout:** Editorial column structure with generous margins. Asymmetric placement of text blocks, pull quotes, and supporting content.
 
 **Typography:**
-- Display: `Canela` (500/600)
-- Body: `Neue Haas Grotesk Text` (400/500)
+- Display: `Canela` (500/600) — fallback: `Playfair Display` (Google Fonts)
+- Body: `Neue Haas Grotesk Text` (400/500) — fallback: `DM Sans` (Google Fonts)
 
 **Colors:**
 ```css
@@ -113,8 +113,8 @@ Curated visual styles for launch pages and product stories. Each preset is desig
 **Layout:** Scene-based storytelling with large viewport sections. Content unfolds as chapters, with dramatic visual transitions and controlled pacing.
 
 **Typography:**
-- Display: `Satoshi` (700/900)
-- Body: `PP Neue Montreal` (400/500)
+- Display: `Satoshi` (700/900) — available on Fontshare
+- Body: `PP Neue Montreal` (400/500) — fallback: `Satoshi` (Fontshare) or `Inter` (Google Fonts)
 
 **Colors:**
 ```css
@@ -147,8 +147,8 @@ Curated visual styles for launch pages and product stories. Each preset is desig
 **Layout:** Sparse composition with large negative space. Strong image hierarchy and minimal copy, with a slow, deliberate reading rhythm.
 
 **Typography:**
-- Display: `Didot` (700)
-- Body: `Suisse Int’l` (400/500)
+- Display: `Didot` (700) — fallback: `Playfair Display` (Google Fonts) or `Cormorant Garamond` (Google Fonts)
+- Body: `Suisse Int’l` (400/500) — fallback: `Inter` (Google Fonts)
 
 **Colors:**
 ```css
@@ -249,8 +249,8 @@ Curated visual styles for launch pages and product stories. Each preset is desig
 **Layout:** Broken-grid composition with surprise moments. Sections feel intentionally irregular, but still controlled enough to navigate.
 
 **Typography:**
-- Display: `Monument Extended` (700)
-- Body: `ABC Diatype` (400/500)
+- Display: `Monument Extended` (700) — fallback: `Syne` (Google Fonts) or `Clash Display` (Fontshare)
+- Body: `ABC Diatype` (400/500) — fallback: `Space Grotesk` (Google Fonts)
 
 **Colors:**
 ```css
@@ -385,8 +385,8 @@ Curated visual styles for launch pages and product stories. Each preset is desig
 **Layout:** Outcome-first landing page layout with stacked conversion sections, repeated CTAs, and objection-handling blocks.
 
 **Typography:**
-- Display: `Helvetica Now Display` (700)
-- Body: `Arial` (400/700)
+- Display: `Helvetica Now Display` (700) — fallback: `Inter` (Google Fonts) or system `-apple-system, 'Helvetica Neue'`
+- Body: `Arial` (400/700) — system font, universally available
 
 **Colors:**
 ```css
